@@ -1,0 +1,76 @@
+html{
+	min-height:100%;
+}
+body{
+	font-family:verdana;
+	background:url('bananas/bananas.png') repeat;
+	/*
+		DO NOT DELETE THIS LINE
+		Background pattern from www.toptal.com/designers/subtlepatterns/
+		DO NOT DELETE THIS LINE
+	*/	
+}
+.container-bg{
+	margin-top:5%;
+	margin-bottom:5%;
+	max-width:1000px;
+}
+.container-sm{
+	margin-top:5%;
+	margin-bottom:5%;
+	max-width:500px;
+}
+.panel-heading{
+	text-align:center;
+}
+.panel-title.host{
+	font-size:25px;
+}
+.table, .table>thead>tr>th {
+	text-align:center;
+	font-size:12px;
+}
+.status-table td {
+	text-align:left;
+}
+.status-table td:first-child {
+	text-align:right;
+}
+.mitra-table td:first-child {
+	font-size:90%;
+	vertical-align:middle;
+}
+.mitra-table td:nth-child(2) {
+	font-size:80%;
+	text-align:left;
+	vertical-align:middle;
+}
+.footer{
+	text-align:center;
+    border-top:1px solid #bce8f1;
+    margin-bottom:-15px;
+    border-radius:0 0 4px 4px;
+	font-size:70%;
+}
+.footer-text{
+	color:#31708f;
+}
+.m-top{
+	margin-top:1em;
+	text-align:center;
+}
+.m-bot{
+	margin-bottom:1em;
+}
+small{
+	font-size:80%;
+}
+.text-break{
+	word-wrap:break-word;
+}
+.btn-text{
+	overflow:hidden;
+	white-space:nowrap;
+	display:inline-block;
+	text-overflow:ellipsis;
+}

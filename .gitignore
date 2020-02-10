@@ -1,0 +1,15 @@
+application/cache/*
+!application/cache/index.html
+
+application/logs/*
+!application/logs/index.html
+
+!application/*/.htaccess
+
+composer.lock
+/vendor/
+
+/nbproject/
+.idea/*
+
+user_guide/
