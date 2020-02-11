@@ -55,6 +55,9 @@ body{
 .footer-text{
 	color:#31708f;
 }
+.author{
+	margin:10px 0;
+}
 .m-top{
 	margin-top:1em;
 	text-align:center;

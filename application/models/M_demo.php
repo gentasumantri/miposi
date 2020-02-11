@@ -12,8 +12,7 @@ class M_demo extends CI_Model {
 					'login'	=> TRUE
 				);
 				$this->session->set_userdata($sess);
-				$link = 'demo/'.$this->session->userdata('theme').'/status';
-				redirect($link);
+				return TRUE;
 			}
 			else if ($uname == 'trial' && $upass == 'trial'){
 				$sess = array(
@@ -21,19 +20,18 @@ class M_demo extends CI_Model {
 					'login'	=> TRUE
 				);
 				$this->session->set_userdata($sess);
-				$link = 'demo/'.$this->session->userdata('theme').'/status';
-				redirect($link);
+				return TRUE;
 			}
 			else{
 				$this->session->set_flashdata('error','wrong username or password');
-				$link = 'demo/'.$this->session->userdata('theme').'/login';
-				redirect($link);
+				return FALSE;
 			}
 		}
-		return false;
+		return FALSE;
 	}
+	
 	public function logout(){
-		if ($this->session->user != ''){
+		if (isset($_SESSION['user']) && $_SESSION['user'] != ''){
 			if ($this->input->post('erase-cookie') == 'false'){
 				$sess = array(
 					'login'		=> FALSE,
@@ -49,9 +47,9 @@ class M_demo extends CI_Model {
 				);
 			}
 			$this->session->set_userdata($sess);
+			return TRUE;
 		}
-		$link = 'demo/'.$this->session->userdata('theme').'/logout';
-		redirect($link);
+		return FALSE;
 	}
 	
 }

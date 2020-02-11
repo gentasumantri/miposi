@@ -72,11 +72,11 @@
 												<div class="input-group-addon"><input type="checkbox" id="s_pw" onclick="show_pw()"></div>
 											</div>
 										</div>
-										<button type="submit" class="btn btn-block btn-info">Submit</button>
+										<button type="submit" class="btn btn-block btn-info">Kirim</button>
 									</form>
 									<?php
 										if($config['trial'] == 'yes'){
-											echo '<p class="text-center">Free trial available, <a href="'.$link_login.'?username=trial&password=trial">click here</a></p>';
+											echo '<p class="text-center">Coba gratis, <a href="'.$link_login.'&username=trial&password=trial">klik disini</a></p>';
 										}
 										if($this->session->flashdata() != NULL){
 											echo '<br /><div class="alert alert-danger text-center">'.$this->session->flashdata('error').'</div>';
@@ -88,7 +88,7 @@
 						<div class="col-xs-12 col-sm-4">
 							<div class="panel panel-info">
 								<div class="panel-heading">
-									<h3 class="panel-title">Voucher Price</h3>
+									<h3 class="panel-title">Harga Voucher</h3>
 								</div>
 								<div class="panel-body">
 									<div class="table-responsive" id="tablegsvc"></div>
@@ -100,16 +100,16 @@
 								<div class="panel panel-info">
 									<div class="panel-heading">
 										<h4 class="panel-title">
-											<a role="button" onclick="col_1()">Information</a>
+											<a role="button" onclick="col_1()">Informasi</a>
 										</h4>
 									</div>
 									<div id="col-1" class="panel-collapse collapse in">
 										<div class="panel-body">
 											<p align="justify" class="text-break">
-												Please be careful, the Username or Password is <strong>Case Sensitive !</strong>
+												Tolong diperhatikan saat mengetik, besar kecil huruf berpengaruh!
 												<br />
 												<br />
-												Make sure it is the same as the voucher is.
+												Pastikan sama dengan voucher.
 											</p>
 										</div>
 									</div>
@@ -117,7 +117,7 @@
 								<div class="panel panel-info">
 									<div class="panel-heading">
 										<h4 class="panel-title">
-											<a role="button" onclick="col_2()" class="collapsed">Our Partner's</a>
+											<a role="button" onclick="col_2()" class="collapsed">Mitra</a>
 										</h4>
 									</div>
 									<div id="col-2" class="panel-collapse collapse">
@@ -129,16 +129,16 @@
 								<div class="panel panel-info">
 									<div class="panel-heading">
 										<h4 class="panel-title">
-											<a role="button" onclick="col_3()" class="collapsed">Contact Us</a>
+											<a role="button" onclick="col_3()" class="collapsed">Hubungi Kami</a>
 										</h4>
 									</div>
 									<div id="col-3" class="panel-collapse collapse">
 										<div class="panel-body">
 											<p align="justify" class="text-break">
-												Phone : +62-852-1999-5161 <br />
+												Telp : +62-852-1999-5161 <br />
 												Email : genta.sumantri@gmail.com
 												<br /><br />
-												Or just using the live chat feature, thanks :)
+												Atau bisa menggunakan fitur Live Chat :)
 											</p>
 										</div>
 									</div>
@@ -153,10 +153,10 @@
 								Mac: <text class="footer-text">01:02:03:04:05:06</text>
 							</span>
 							<span class="col-xs-6">
-								Language:<br />
-								<abbr title="You're in English page" class="initialism">English</abbr> /  <a href='<?=$link_login?>?lang=id'>Indonesia</a>
+								Bahasa:<br />
+								<a href='<?=$link_login?>?lang=en'>English</a> / <abbr title="Kamu ada di halaman Bahasa Indonesia" class="initialism">Indonesia</abbr>
 							</span>
-							<span class="col-xs-12">Template by <a href="mailto:genta.sumantri@gmail.com" target="_blank">Genta Sumantri</a> | Powered by <a href="https://getbootstrap.com/" rel="noreferrer" target="_blank">Bootstrap</a></span>
+							<span class="col-xs-12 author">Template by <a href="mailto:genta.sumantri@gmail.com" target="_blank">Genta Sumantri</a> | Powered by <a href="https://getbootstrap.com/" rel="noreferrer" target="_blank">Bootstrap</a></span>
 						</div>
 					</div>
 				</div>
@@ -166,7 +166,7 @@
 	<script type="text/javascript" src="<?=$assets?>genta.js"></script>
 	<script type="text/javascript">
 		l_mb();
-		loadfil('<?=$data?>table_en.csv','tbvc');
+		loadfil('<?=$data?>table_id.csv','tbvc');
 		loadfil('<?=$data?>mitra.csv','tbmtr');
 	</script>
 </html>

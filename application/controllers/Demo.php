@@ -7,64 +7,58 @@ class Demo extends CI_Controller {
 		parent:: __construct();
 		$this->load->library('session');
 		$this->load->model('M_demo');
+		$this->load->helper('my');
 	}
 	
 	public function natural_blue ($method = NULL){
+		check_lang($this->input->get('lang'));
 		$template					= 'natural_blue';
 		$data['assets'] 			= base_url('view/'.$template.'/assets/');
 		$data['data']				= base_url('view/'.$template.'/data/');
-		$data['link_login_theme']	= site_url('demo/'.$template.'/login');
-		$data['link_logout_theme']	= site_url('demo/'.$template.'/logout');
-		$status						= 'demo/'.$template.'/status';
-		$login						= 'demo/'.$template.'/login';
+		$data['link_login']			= site_url('demo/'.$template.'/login');
+		$data['link_status']		= site_url('demo/'.$template.'/status');
+		$data['link_logout']		= site_url('demo/'.$template.'/logout');
 		$data['config']				= array(
 			'server-name'	=> 'igproject.net',
 			'trial'			=> 'yes',
 		);
-		
-		$this->session->theme = 'natural_blue';
+		$this->session->template = 'natural_blue';
 		
 		if ($method == "login"){
-			if ($this->session->login === TRUE){
-				redirect($status);
+			if (check_login() === TRUE){
+				redirect($data['link_status']);
 			}
-			else if ($this->session->cookies === TRUE){
-				$this->session->login = TRUE;
-				redirect($status);
-			}
-			else{
-				$this->M_demo->login();
-			}
-			$this->load->view($template."/login.php", $data);
-		}
-		else if ($method == "status"){
-			if ($this->session->login === TRUE && $this->session->user != ''){
-				$this->load->view($template."/status.php", $data);
-			}
-			else{
-				session_destroy();
-				redirect($login);	
-			}	
-		}
-		else if ($method == "logout"){
-			if(isset($_SESSION['user'])){
-				if ($this->session->dst == 'logout'){
-					$this->load->view($template."/logout.php", $data);
-					$this->session->unset_userdata('dst');
-				}
-				else if($this->session->login === FALSE){
-					redirect($login);
+			else if ($this->input->post_get('username')){
+				if($this->M_demo->login() === TRUE){
+					redirect($data['link_status']);
 				}
 				else{
-					$this->M_demo->logout();
+					redirect($data['link_login']);
 				}
 			}
 			else{
-				redirect($login);
+				$this->load->view($template.$_SESSION['lang'].'/login.php', $data);	
+			}
+		}
+		else if ($method == "status"){
+			if (check_login() === TRUE){
+				$this->load->view($template.$_SESSION['lang']."/status.php", $data);
+			}
+			else{
+				redirect($data['link_login']);
+			}
+		}
+		else if ($method == "logout"){
+			if($this->M_demo->logout() === TRUE){
+				$this->load->view($template.'/'.$_SESSION['lang'].'/logout.php', $data);
+				$this->session->unset_userdata('dst');
+			}
+			else{
+				redirect($data['link_login']);
 			}
 		}
 		else{
-			echo "index";
+			echo "waktwat";
 		}
 	}
 }

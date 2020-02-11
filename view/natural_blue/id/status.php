@@ -18,7 +18,7 @@
 				<div class="panel-heading">
 					<h1 class="panel-title host"><a href=<?=$link_login?>><strong><?=$config['server-name']?></strong></a></h1>
 					<?php
-						echo '<small>Welcome '.$this->session->user.'</small>';
+						echo '<small>Selamat datang '.$this->session->user.'</small>';
 					?>					
 				</div>
 				<div class="panel-body">
@@ -29,22 +29,22 @@
 									<tbody>
 										<tr>
 											<td>IP / Mac</td>
-											<td><text class="text-info">127.0.0.1</text> / <text class="text-warning">01:02:03:04:05:06</text></td>
+											<td><text class="text-info"><?=$this->input->ip_address()?></text> / <text class="text-warning">01:02:03:04:05:06</text></td>
 										</tr>
 										<tr>
 											<td>Up / Down</td>
 											<td>100 MiB / 100 MiB</td>
 										</tr>
 										<tr>
-											<td>Uptime</td>
+											<td>Lama Online</td>
 											<td>10s</td>
 										</tr>
 										<tr>
-											<td>Quota</td>
+											<td>Sisa Kuota</td>
 											<td>100 MiB</td>
 										</tr>
 										<tr>
-											<td>Time Left</td>
+											<td>Sisa Waktu</td>
 											<td>2m</td>
 										</tr>
 										<!--$(if blocked == 'yes')
@@ -59,7 +59,7 @@
 											<td>60s</td>
 										</tr>
 										<tr>
-											<td>Login by</td>
+											<td>Login Menggunakan</td>
 											<td>HTTP</td>
 										</tr>
 									</tbody>
@@ -90,8 +90,8 @@
 					<div class="row">
 						<div class="col-xs-12 bg-info footer">
 							<span class="col-xs-12">
-								Language:<br />
-								<abbr title="You're in English page" class="initialism">English</abbr> /  <a href='<?=$link_status?>?lang=id'>Indonesia</a>
+								Bahasa:<br />
+								<a href='<?=$link_status?>?lang=en'>English</a> / <abbr title="Kamu ada di halaman Bahasa Indonesia" class="initialism">Indonesia</abbr>
 							</span>
 							<span class="col-xs-12 author">Template by <a href="mailto:genta.sumantri@gmail.com" target="_blank">Genta Sumantri</a> | Powered by <a href="https://getbootstrap.com/" rel="noreferrer" target="_blank">Bootstrap</a></span>
 						</div>

@@ -6,7 +6,7 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title><?=$config['server-name']?> - Logout</title>
+		<title><?=$config['server-name']?> - Logout INDO</title>
 		<link rel="icon" href="<?=$assets?>icon.ico" />
 		<link rel="stylesheet" href="<?=$assets?>bootstrap.min.css?version=0.0.1" />
 		<link rel="stylesheet" href="<?=$assets?>genta.css?version=0.0.1" />
@@ -16,7 +16,7 @@
 			<div class="panel panel-primary">
 				<div class="panel-heading">
 					<h1 class="panel-title host"><a href=<?=$link_login?>><strong><?=$config['server-name']?></strong></a></h1>
-					<small>Thanks for using our service :)</small>
+					<small>Terimakasih telah menggunakan layanan kami :)</small>
 				</div>
 				<div class="panel-body">
 					<div class="row">
@@ -29,7 +29,7 @@
 											if ($this->session->user == 'trial'){
 												echo	'<tr>
 															<td>Username</td>
-															<td>Trial user</td>
+															<td>Trial</td>
 														</tr>';
 											}
 											else{
@@ -41,29 +41,29 @@
 										?>
 										<tr>
 											<td>IP / Mac</td>
-											<td><text class="text-info">127.0.0.1</text> / <text class="text-warning">01:02:03:04:05:06</text></td>
+											<td><text class="text-info"><?=$this->input->ip_address()?></text> / <text class="text-warning">01:02:03:04:05:06</text></td>
 										</tr>
 										<tr>
 											<td>Up / Down</td>
 											<td>1 MiB / 1 MiB</td>
 										</tr>
 										<tr>
-											<td>Uptime</td>
+											<td>Lama Online</td>
 											<td>2m</td>
 										</tr>
 										<tr>
-											<td>Remain Quota</td>
+											<td>Sisa Kuota</td>
 											<td>100 MiB</td>
 										</tr>
 										<tr>
-											<td>Time Left</td>
+											<td>Sisa Waktu</td>
 											<td>50m</td>
 										</tr>
 									</tbody>
 								</table>
 							</div>
 							<div class="col-xs-12 m-bot">
-								<a href="<?=$link_login?>" class="btn btn-block btn-primary" >BACK TO LOGIN PAGE</a>
+								<a href="<?=$link_login?>" class="btn btn-block btn-primary" >Kembali Ke Halaman Login</a>
 							</div>
 						</div>
 					</div>
