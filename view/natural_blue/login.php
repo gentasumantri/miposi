@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="<?=$assets?>genta.css?version=0.0.1" />
 	</head>
 	<body>
-		<form name="sendin" action="<?=$link_login?>" method="post">
+		<form name="sendin" action="<?=$link_login_theme?>" method="post">
 			<input type="hidden" name="username" />
 			<input type="hidden" name="password" />
 		</form>
@@ -61,7 +61,7 @@
 										</div>
 									</div>
 									<br />
-									<form name="login" action=<?=$link_login?> method="post" onSubmit="return doLogin()">
+									<form name="login" action=<?=$link_login_theme?> method="post" onSubmit="return doLogin()">
 										<input type="hidden" name="tipe" value="mb" />
 										<div class="form-group">
 											<input class="form-control" type="text" name="username" placeholder="type username" value="admin" autofocus />
@@ -76,7 +76,7 @@
 									</form>
 									<?php
 										if($config['trial'] == 'yes'){
-											echo '<p class="text-center">Free trial available, <a href="'.$link_login.'?username=trial$password=trial">click here</a></p>';
+											echo '<p class="text-center">Free trial available, <a href="'.$link_login_theme.'?username=trial&password=trial">click here</a></p>';
 										}
 										if($this->session->flashdata() != NULL){
 											echo '<br /><div class="alert alert-danger text-center">'.$this->session->flashdata('error').'</div>';

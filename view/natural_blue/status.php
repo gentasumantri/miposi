@@ -66,7 +66,7 @@
 								</table>
 							</div>
 							<div class="col-xs-12">
-								<form action="<?=$link_logout?>" name="logout" method="POST">
+								<form action="<?=$link_logout_theme?>" name="logout" method="POST">
 									<div class="btn-group btn-group-justified" role="group">
 										<div class="btn-group" role="group">
 											<button class="btn btn-success" type="button" onclick="window.location.reload()">Refresh</button>

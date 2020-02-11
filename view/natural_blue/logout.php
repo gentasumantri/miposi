@@ -15,7 +15,7 @@
 		<div class="container container-sm">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h1 class="panel-title host"><a href=<?=$link_login?>><strong><?=$config['server-name']?></strong></a></h1>
+					<h1 class="panel-title host"><a href=<?=$link_login_theme?>><strong><?=$config['server-name']?></strong></a></h1>
 					<small>Thanks for using our service :)</small>
 				</div>
 				<div class="panel-body">
