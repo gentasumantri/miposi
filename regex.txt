@@ -1,0 +1,36 @@
+<?php
+initial = regex = replaced text
+/* my server var */
+
+
+'href="/assets/'			='/href="(\/assets\/)/' = 'href="<?=$assets?>'
+
+
+/* mikrotik var*/
+
+$(server-name)				= '[$][(](server-name)[)]' = '<?=$config["server-name"]?>';
+
+$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)
+= '[$][(](link-login-only)[)](.{0,46})[)]'
+= '.$link_login.'?username=trial&password=trial" -> escaping"
+
+$(link-login-only)			= '[$][(](link-login-only)[)]' = '<?=$link_login?>'
+
+$(if chap-id)				= '[$][(](if chap-id)[)]' = '<?php if($chap_id == TRUE){ ?>'
+
+('$(chap-id)' + 			= '[(]['][$][(](chap-id)[)]['](\s[+]\s)' = '('
+
+ + '$(chap-challenge)'		= (\s[+].['])[$][(](chap-challenge)[)]['] = ''
+
+$(elif plain-passwd == "yes") = [$][(](elif plain-passwd == "yes")[)] = '<?php }elseif($plain_passwd == TRUE){'
+
+$(link-login-only)?dst=$(link-orig-esc)&target=		= '[$][(](link-login-only)[)](.{0,28})[=]' = '<?=$link_login?>?lang=id'
+
+$(if trial == 'yes')	= '[$][(](if trial == 'yes')[)]' = '<?php if($trial == TRUE){?>'
+
+$(if error)				= '[$][(](if error)[)]' = '<?php if($this->session->flashdata() != NULL){ ?>'
+
+$(error)				= '[$][(](error)[)]'	= '<?=$this->session->flashdata('error')?>'
+
+$(endif)				= 	= '<?php } ?>'
+

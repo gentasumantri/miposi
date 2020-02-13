@@ -10,18 +10,24 @@ class Demo extends CI_Controller {
 		$this->load->helper('my');
 	}
 	
-	public function natural_blue ($method = NULL){
+	public function bawaan ($method = NULL){
 		check_lang($this->input->get('lang'));
-		$template					= 'natural_blue';
+		$template					= 'bawaan';
 		$data['assets'] 			= base_url('view/'.$template.'/assets/');
 		$data['data']				= base_url('view/'.$template.'/data/');
 		$data['link_login']			= site_url('demo/'.$template.'/login');
 		$data['link_status']		= site_url('demo/'.$template.'/status');
 		$data['link_logout']		= site_url('demo/'.$template.'/logout');
-		$data['config']				= array(
-			'server-name'	=> 'igproject.net',
-			'trial'			=> 'yes',
-		);
+		$data['server_name']		= 'igproject.net';
+		$data['chap_id']			= TRUE;
+		$data['refresh']			= TRUE;
+		$data['refresh_sec']		= 60;
+		$data['advert']				= FALSE;
+		$data['trial']				= TRUE;
+		$data['plain_passwd']		= TRUE;
+		$data['session_time_left']	= TRUE;
+		$data['blocked']			= FALSE;
+		$data['login_by_mac']		= FALSE;
 		$this->session->template = 'natural_blue';
 		
 		if ($method == "login"){
@@ -37,7 +43,7 @@ class Demo extends CI_Controller {
 				}
 			}
 			else{
-				$this->load->view($template.$_SESSION['lang'].'/login.php', $data);	
+				$this->load->view($template.$_SESSION['lang'].'/login.php', $data);
 			}
 		}
 		else if ($method == "status"){
@@ -58,7 +64,7 @@ class Demo extends CI_Controller {
 			}
 		}
 		else{
-			echo "waktwat";
+			redirect($data['link_login']);
 		}
 	}
 }
