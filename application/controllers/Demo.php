@@ -10,25 +10,41 @@ class Demo extends CI_Controller {
 		$this->load->helper('my');
 	}
 	
-	public function bawaan ($method = NULL){
-		check_lang($this->input->get('lang'));
-		$template					= 'bawaan';
+	public function mikrotik ($template, $method = NULL){
+		
+		/* check the language input first (if exist) */
+		check_lang($this->input->get('target')); 
+		
+		/* Important */
 		$data['assets'] 			= base_url('view/'.$template.'/assets/');
 		$data['data']				= base_url('view/'.$template.'/data/');
-		$data['link_login']			= site_url('demo/'.$template.'/login');
-		$data['link_status']		= site_url('demo/'.$template.'/status');
-		$data['link_logout']		= site_url('demo/'.$template.'/logout');
+		$data['link_login']			= site_url('demo/mikrotik/'.$template.'/login');
+		$data['link_status']		= site_url('demo/mikrotik/'.$template.'/status');
+		$data['link_logout']		= site_url('demo/mikrotik/'.$template.'/logout');
+		
+		/* Global */
 		$data['server_name']		= 'igproject.net';
-		$data['chap_id']			= TRUE;
-		$data['refresh']			= TRUE;
-		$data['refresh_sec']		= 60;
-		$data['advert']				= FALSE;
-		$data['trial']				= TRUE;
-		$data['plain_passwd']		= TRUE;
-		$data['session_time_left']	= TRUE;
-		$data['blocked']			= FALSE;
-		$data['login_by_mac']		= FALSE;
-		$this->session->template = 'natural_blue';
+		$data['mac']				= implode(':', str_split(substr(md5(mt_rand()),0,12), 2)); // Create random mac
+		$data['ip']					= $this->input->ip_address(); // Show real user Ip Address
+		$data['mac_trial']			= 'trial'; // DONT CHANGE THIS
+		
+		/* Login Method */
+		$data['http_chap']			= TRUE; // Use HTTP-CHAP
+		$data['http_pap']			= FALSE; // Use HTTP-PAP -- it is better to keep this FALSE
+		$data['trial']				= TRUE; // Is trial available ?
+		
+		/* Status Page */
+		$data['refresh']			= '60'; /* time before status page reload (sec)*/
+		$data['time_left']			= '60 s';
+		$data['byte_up']			= '10 Mib';
+		$data['byte_down']			= '1000 Mib';
+		$data['uptime']				= '10s';
+		$data['remain_quota']		= '100 Mib';
+		
+		/* Misc */
+		$data['unk_no']				= FALSE; // DONT CHANGE THIS
+		
+		$this->session->template = $template;
 		
 		if ($method == "login"){
 			if (check_login() === TRUE){

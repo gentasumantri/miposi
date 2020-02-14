@@ -1,0 +1,45 @@
+$(server-name) .
+$(ip) .
+$(mac) .
+$(mac-esc) .
+
+$(link-login) .
+$(link-login-only) .
+$(link-status) .
+$(link-logout) .
+$(link-orig) .
+$(link-orig-esc) .
+$(link-advert) .
+$(login-by) .
+$(if login-by == 'trial') .
+$(elif login-by != 'mac') .
+$(if login-by-mac != 'yes') .
+$(if trial == 'yes') .
+$(if chap-id) .
+$(if plain-passwd == 'yes') .
+$(elif plain-passwd == 'yes') .
+
+$(if error) .
+$(error) .
+
+$(username) .
+$(bytes-in-nice) .
+$(bytes-out-nice) .
+$(remain-bytes-total-nice) .
+$(uptime) .
+$(session-time-left) .
+$(if session-time-left) .
+$(refresh-timeout) .
+$(if refresh-timeout) .
+$(elif refresh-timeout) .
+
+
+$(if blocked == 'yes') .
+
+$(if advert-pending == 'yes') .
+$(endif) .
+
+customs :
+hexMD5('$(chap-id)' + xyz.password.value + '$(chap-challenge)');
+<a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">
+<a href="$(link-login-only)?target=id&amp;dst=$(link-orig-esc)">Indonesia</a>
