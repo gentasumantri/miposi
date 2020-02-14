@@ -15,3 +15,4 @@ composer.lock
 user_guide/
 
 view/*
+!view/default

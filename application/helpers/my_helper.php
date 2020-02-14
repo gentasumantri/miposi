@@ -1,4 +1,13 @@
-<?php
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+
+/*
+
+MIPOSI - Mikrotik Portal Simulation
+Build with Codeigniter 3
+Author : Genta Sumantri
+Contact : genta.sumantri@gmail.com
+
+*/
 
 function dd($data){
 	echo '<pre>';

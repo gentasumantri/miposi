@@ -1,5 +1,14 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
+/*
+
+MIPOSI - Mikrotik Portal Simulation
+Build with Codeigniter 3
+Author : Genta Sumantri
+Contact : genta.sumantri@gmail.com
+
+*/
+
 class M_demo extends CI_Model {
 	
 	public function login(){
@@ -52,7 +61,7 @@ class M_demo extends CI_Model {
 		return FALSE;
 	}
 	
-	public function addFIle($path,$pattern){
+	public function addFile($path,$pattern){
 		$files		= array(
 			'login'		=> 'login.html',
 			'status'	=> 'status.html',

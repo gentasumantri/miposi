@@ -7,6 +7,7 @@ Contact : genta.sumantri@gmail.com
 Honestly, it's not a Mikrotik Hotspot Simulation. it's just an App that I'am build to demonstrate my template online.
 My client was want to see my work like its live, so i build this.
 
+Demo : mikrotik-demo/Demo/
 
 INFO :
 
@@ -18,14 +19,22 @@ INFO :
 . Password = admin
 . Remember this is a PHP file, you can costumize to your own need.
 
-
 HOW TO :
+
++++++
+Please create folder called "assets" && move all your assets file to this folder (css, js)
++++++
 
 1. Copy your template folder to '<root_folder>/view/<place_your_template_here>'
 2. Then navigate to <your_domain>/add/files/<your_template_folder>
 3. It will automatically convert your Login.html, Status.html, and Logout.html to .php files.
 4. Now look your template at <your_domain>/demo/mikrotik/<your_template_folder>
-5. Just in case you have multi-language template, juat add your sub-folder too!.
+5. Just in case you have multi-language template, just add your sub-folder too!.
 6. Example : <your_domain>/add/files/<your_template_folder>/<your_subfolder_language
 
-some advice : try to add index.html to all sub-folder in your template.
+
+Create Your Modified Regex :
+
+
+
+some advice : try to add index.html to all sub-folder in your template (prevent your directory indexing).
