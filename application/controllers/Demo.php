@@ -2,10 +2,10 @@
 
 /*
 
-MIPOSI - Mikrotik Portal Simulation
-Build with Codeigniter 3
-Author : Genta Sumantri
-Contact : genta.sumantri@gmail.com
+	MIPOSI - Mikrotik Portal Simulation
+	Build with Codeigniter 3
+	Author : Genta Sumantri
+	Contact : genta.sumantri@gmail.com
 
 */
 
@@ -53,8 +53,6 @@ class Demo extends CI_Controller {
 		/* Misc */
 		$data['unk_no']				= FALSE; // DONT CHANGE THIS
 		
-		
-		
 		if ($method == "login"){ // Show login page
 			if (check_login() === TRUE){
 				redirect($data['link_status']);
@@ -68,11 +66,13 @@ class Demo extends CI_Controller {
 				}
 			}
 			else{
+				$this->output->set_header('Pragma: no-cache');
 				$this->load->view($template.$_SESSION['lang'].'/login.php', $data);
 			}
 		}
 		else if ($method == "status"){ // Show status page
 			if (check_login() === TRUE){
+				$this->output->set_header('Pragma: no-cache');
 				$this->load->view($template.$_SESSION['lang']."/status.php", $data);
 			}
 			else{
@@ -81,6 +81,7 @@ class Demo extends CI_Controller {
 		}
 		else if ($method == "logout"){ // Show logout page
 			if($this->M_demo->logout() === TRUE){
+				$this->output->set_header('Pragma: no-cache');
 				$this->load->view($template.'/'.$_SESSION['lang'].'/logout.php', $data);
 				$this->session->unset_userdata('dst');
 			}
