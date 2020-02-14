@@ -102,12 +102,13 @@ class Demo extends CI_Controller {
 		*/
 		$pattern = array(
 			/* Custom */
-			/*'/="(\/assets\/)/'				=> '="<?=$assets?>', // myCustom Regex */
+			/*'/="(\/assets\/)/'			=> '="<?=$assets?>', // myCustom Regex */
 			"/(loadfil[(]'\/data\/)/"		=> 'loadfil('."'".'<?=$data?>', // myCustom Regex
 			'/(value="[$][(]username[)]")/'	=> '', // empty login form username value
 			'/(\'[$][(]chap-id[)]\'\s[+]\s)|(\s[+]\s\'[$][(]chap-challenge[)]\')/' => '', // we dont need chap-challenge
-			'/(\ssrc="\/)/'					=> ' src="<?=$template_link?>', // src path for Js
-			'/(\shref="\/)/'				=> ' href="<?=$template_link?>', // href path for Css or link
+			'/(\ssrc=("\/|"))/'				=> ' src="<?=$template_link?>', // src path for Js
+			'/(\shref=("\/|"))(?![$]|http|mailto)/'	=> ' href="<?=$template_link?>', // href path for Css or link
+			
 			
 			/* Global */
 			'/([$][(]server-name[)])/'		=>	'<?=$server_name?>',
